@@ -39,5 +39,9 @@ public class Employee {
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "empid")
 	private List<Address> address;
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name="deptid")
+	private List<Department> department;
 
 }
